@@ -1,0 +1,8 @@
+#root{
+    background-color: black;
+    background-image: url('/bg.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 1s ease;
+}
