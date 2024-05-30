@@ -23,6 +23,8 @@ function Activity() {
   const [toggle, setToggle] = useState(false)
   const [count, setCount] = useState(0)
 
+  // SHUFFLE CARDS
+
   useEffect(() => {
     setImagCard(shuffleArray(images))
     setAlphaCard(shuffleArray(alphabets))
@@ -35,6 +37,7 @@ function Activity() {
       .map((a) => a[1]);
   };
 
+// FUNCTION TO HANDLE IMAGE FLIP
 
   const handleIFlip = (card) => {
     playc()
@@ -48,6 +51,8 @@ function Activity() {
     }
 
   };
+
+  // FUNCTION TO HANDLE CARD FLIP
 
   const handleAFlip = (card) => {
     playc()
@@ -97,9 +102,11 @@ function Activity() {
 
   return (
     <div className='absolute w-full'>
+      {/* DISPLAY OF MATCHED CARDS */}
       <div className={`relative z-20 ${toggle ? "visible" : "invisible"}`}>
         <Match matched={matched} setToggle={setToggle} />
       </div>
+      {/* HEADER SECTION */}
       <div className='relative z-0'>
         <img src="/Group 156.svg" alt="" className='size-32 fixed top-10 left-10' onClick={() => navigate("/info")} />
         <div className='flex fixed top-10 left-2/4 w-full -ml-48 '>
@@ -110,6 +117,7 @@ function Activity() {
         </div>
       </div>
       <div className='grid grid-cols-2 gap-36 fixed left-36 top-40'>
+        {/* IMAGE CARDS */}
         <div className='grid grid-cols-3 gap-5'>
           {imgCard.map((image, index) => (
             <div key={image.id} className={`relative transition-transform duration-500 w-36 h-44 hover:scale-110 
@@ -123,6 +131,7 @@ function Activity() {
 
           ))}
         </div>
+        {/* ALPHABET CARDS */}
         <div className='grid grid-cols-3 gap-5'>
           {alphaCard.map((alpha, index) => (
             <div key={alpha.id} className={`relative w-36 h-44 transition-transform duration-500 hover:scale-110  

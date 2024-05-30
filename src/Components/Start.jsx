@@ -6,6 +6,7 @@ function Start() {
     const navigate = useNavigate()
   return (
     <div>
+      {/* START PAGE BACKGROUND */}
         <img src="/Group 156.svg" alt=""  onClick={() => navigate('/')} className={`size-32 fixed top-10 left-10 cursor-pointer ${start==="YES" ? 'visible':'invisible'}`} />
         <div className={`flex fixed top-0 left-1/4 -mr-2 ${start==="YES" ? 'visible':'invisible'}`}>
         <img src="/Group 148.svg" alt="" width={600} className=''/>
@@ -63,11 +64,14 @@ function Start() {
         </div>
       </div>
       <div>{start==='START'?
+      // START BUTTON
         <img src="/Group 123.svg" alt="" width={300} className='fixed bottom-7 right-44 cursor-pointer' onClick={()=>setStart('NEXT')}/>
         : 
         start==='YES'?
+        // YES BUTTON
         <img src="/Yes.svg" alt="" width={300} className='fixed bottom-7 right-44 cursor-pointer' onClick={()=>navigate('/info')}/>    
         :
+        // NEXT BUTTON
         <img src="/next.svg" alt="" width={300} className='fixed bottom-7 right-44 cursor-pointer' onClick={()=>setStart('YES')}/>
             }
         </div>
