@@ -109,12 +109,10 @@ function Activity() {
       {/* HEADER SECTION */}
       <div className='relative z-0'>
         <img src="/Group 156.svg" alt="" className='size-32 fixed top-10 left-10' onClick={() => navigate("/info")} />
-        <div className='flex fixed top-10 left-2/4 w-full -ml-48 '>
-          <div className='h-10 w-3/5 bg-no-repeat bg-contain -ml-28 -mt-2 ' style={{backgroundImage:"url(/loadbox.svg)"}}>
-          <img src="/load.svg" alt="" className={count===4||count===5?`visible`:`invisible`}  />
-          </div>
-          <img src="/Group 154.svg" alt="" width={120} className='-ml-48 -mt-5' />
-        </div>
+        <div className='fixed top-10 left-80 h-10 w-1/2 bg-no-repeat bg-center rounded-xl ' style={{backgroundImage:"url(/loadbox.svg"}}>
+            <div className={`h-full  bg-no-repeat`} style={{ backgroundImage:"url(/load.svg)",width: `${(count / 6) * 100}%`}}></div>
+            <img src={`${count===6 ? '/Group 154.svg':'/Group 154.svg'}`} alt="" width={120} className='fixed top-6 right-80' />
+        </div> 
       </div>
       <div className='grid grid-cols-2 gap-36 fixed left-36 top-40'>
         {/* IMAGE CARDS */}
