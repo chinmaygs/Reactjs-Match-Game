@@ -1,6 +1,9 @@
+import useSound from 'use-sound';
 import { useNavigate } from 'react-router-dom'
+import gameStart from '../sounds/game-start.mp3';
 
 function Instruction() {
+  const [play, {stop}] = useSound(gameStart);
   const navigate = useNavigate()
   return (
     <div>
@@ -40,7 +43,7 @@ function Instruction() {
         <img src="/Frame 17.svg" alt="" width={1000} className='relative z-10' />
       </div>
       <div className=''>
-        <img src="/Play.svg" alt="" width={300} className='absolute bottom-5 right-44' onClick={() => navigate('/activity')} />
+        <img src="/Play.svg" alt="" width={300} className='absolute bottom-5 right-44' onClick={() =>{play(); navigate("/activity")}} />
       </div>
     </div>
   )
